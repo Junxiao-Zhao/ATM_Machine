@@ -24,6 +24,8 @@ public:
 
     // Setters
     void setPwd(string newPwd);
+    void addBalance(double add);
+    void setBalance(double newB);
     void addTrans(transaction *t);
 
     // show all transactions

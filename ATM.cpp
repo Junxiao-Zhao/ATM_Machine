@@ -19,8 +19,10 @@ int main()
              << "=============" << endl
              << "Enter Your Account no: ";
         cin >> accountNo;
+        cin.get();
         cout << "Enter your password: ";
         cin >> password;
+        cin.get();
         cout << endl;
 
         // match password
@@ -43,15 +45,17 @@ int main()
              << "(4) Show All Transactions" << endl
              << "Enter your choice: ";
         cin >> input;
+        cin.get();
         cout << endl;
 
+        bankAccount &cur_account = accounts[accountNo - 1];
         switch (input)
         {
         case 1:
-            showBalance(accounts[accountNo - 1]);
+            showBalance(cur_account);
             break;
         case 2:
-
+            deposit(cur_account);
             break;
         case 3:
 

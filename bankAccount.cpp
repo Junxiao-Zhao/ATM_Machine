@@ -49,6 +49,16 @@ void bankAccount::setPwd(string newPwd)
     this->password = newPwd;
 }
 
+void bankAccount::addBalance(double add)
+{
+    this->balance += add;
+}
+
+void bankAccount::setBalance(double newB)
+{
+    this->balance += newB;
+}
+
 void bankAccount::addTrans(transaction *t)
 {
     this->trans_array.push_back(t);

@@ -4,5 +4,6 @@
 #include "global.h"
 
 void showBalance(bankAccount &account);
+void deposit(bankAccount &account);
 
 #endif
