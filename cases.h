@@ -5,5 +5,7 @@
 
 void showBalance(bankAccount &account);
 void deposit(bankAccount &account);
+void withdraw(bankAccount &account);
+void showAllTrans(bankAccount &account);
 
 #endif

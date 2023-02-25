@@ -51,17 +51,17 @@ int main()
         bankAccount &cur_account = accounts[accountNo - 1];
         switch (input)
         {
-        case 1:
+        case 1: // show balance
             showBalance(cur_account);
             break;
-        case 2:
+        case 2: // deposit
             deposit(cur_account);
             break;
-        case 3:
-
+        case 3: // withdraw
+            withdraw(cur_account);
             break;
-        case 4:
-
+        case 4: // show all transactions
+            showAllTrans(cur_account);
             break;
         }
         cout << endl;

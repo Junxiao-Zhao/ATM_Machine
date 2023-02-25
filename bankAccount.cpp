@@ -54,6 +54,11 @@ void bankAccount::addBalance(double add)
     this->balance += add;
 }
 
+void bankAccount::wdBalance(double wd)
+{
+    this->balance -= wd;
+}
+
 void bankAccount::setBalance(double newB)
 {
     this->balance += newB;
@@ -83,5 +88,5 @@ ostream &operator<<(ostream &out, bankAccount &ba)
     }
 
     // tail
-    return out << broken_line;
+    return out << broken_line << endl;
 }
