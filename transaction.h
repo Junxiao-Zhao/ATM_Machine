@@ -24,7 +24,7 @@ public:
     void setType(string newT);
     void setAmount(double newA);
 
-    // Show this transaction
+    // show this transaction
     friend ostream &operator<<(ostream &out, transaction &ts);
 };
 

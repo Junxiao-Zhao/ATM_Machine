@@ -36,10 +36,10 @@ void transaction::setAmount(double newA)
     this->amount = newA;
 }
 
-// Show this transaction
+// show this transaction
 ostream &operator<<(ostream &out, transaction &ts)
 {
     return out << setw(30) << left << ts.date << "| "
                << setw(20) << left << ts.type << "| "
-               << setw(6) << left << ts.amount;
+               << setw(10) << left << ts.amount;
 }

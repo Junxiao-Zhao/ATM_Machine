@@ -14,7 +14,7 @@ private:
 
 public:
     // Constructor & Deconstructor
-    bankAccount(string pwd);
+    bankAccount(string pwd, double b);
     ~bankAccount();
 
     // Getters
@@ -23,10 +23,10 @@ public:
     double getBalance();
 
     // Setters
-    void setPed(string newPwd);
+    void setPwd(string newPwd);
     void addTrans(transaction *t);
 
-    // Show all transactions
+    // show all transactions
     friend ostream &operator<<(ostream &out, bankAccount &ba);
 };
 

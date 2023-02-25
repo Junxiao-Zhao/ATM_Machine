@@ -1,24 +1,28 @@
 #include "global.h"
 
 // Class counter
-int bankAccount::num = 0;
+int bankAccount::num = 1;
 
 // Constructor
-bankAccount::bankAccount(string pwd)
+bankAccount::bankAccount(string pwd, double b)
 {
     this->account_no = bankAccount::num;
     this->password = pwd;
-    this->balance = 5000;
+    this->balance = b;
     bankAccount::num++;
 }
 
 // Deconstructor
 bankAccount::~bankAccount()
 {
+    // free each transaction
     for (int i = 0; i < this->trans_array.size(); i++)
     {
         delete this->trans_array[i];
+        this->trans_array[i] = nullptr;
     }
+
+    // free the vector
     this->trans_array.clear();
     vector<transaction *>().swap(this->trans_array);
 }
@@ -40,7 +44,7 @@ double bankAccount::getBalance()
 }
 
 // Setters
-void bankAccount::setPed(string newPwd)
+void bankAccount::setPwd(string newPwd)
 {
     this->password = newPwd;
 }
@@ -50,16 +54,16 @@ void bankAccount::addTrans(transaction *t)
     this->trans_array.push_back(t);
 }
 
-// Show all transactions
+// show all transactions
 ostream &operator<<(ostream &out, bankAccount &ba)
 {
     // header
     out << "Account no: " << ba.account_no << endl
-        << string(60, '-') << endl
+        << broken_line << endl
         << setw(30) << left << "Date"
         << "| " << setw(20) << left << "Type"
-        << "| " << setw(6) << left << "Amount" << endl
-        << string(60, '-') << endl;
+        << "| " << setw(10) << left << "Amount" << endl
+        << broken_line << endl;
 
     // body
     for (int i = 0; i < ba.trans_array.size(); i++)
@@ -69,5 +73,5 @@ ostream &operator<<(ostream &out, bankAccount &ba)
     }
 
     // tail
-    return out << string(60, '-');
+    return out << broken_line;
 }
