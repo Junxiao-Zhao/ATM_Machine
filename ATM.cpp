@@ -6,7 +6,7 @@ int main()
     vector<bankAccount> accounts;
     for (int i = 0; i < 10; i++)
     {
-        bankAccount cur_ba(to_string(rand() % 3), 5000);
+        bankAccount cur_ba(to_string(i + 1), 5000);
         accounts.push_back(cur_ba);
     }
 
